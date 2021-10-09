@@ -1,0 +1,22 @@
+<div class="pdf-viewer-wrap">
+
+    <div class="pdf-viewer-controls-wrap">
+        <div>
+            <div class="pdfv-control">
+                Select PDF:
+                <input (change)="onFileSelected()" type="file" id="file">
+            </div>
+
+            <div class="example-box" cdkDrag>
+                Drag me
+            </div>
+        </div>
+    </div>
+
+    <div class="pdf-viewer-viewer-window">
+        <pdf-viewer [src]="pdfSrc" [render-text]="renderText" [render-text-mode]="renderTextMode" [rotation]="rotation" [zoom]="zoom" [zoom-scale]="zoomScale" [original-size]="originalSize" [fit-to-page]="fitToPage" [show-all]="showAll" [autoresize]="autoresize"
+            [show-borders]="showBorders" (after-load-complete)="callBackFn($event)" (page-rendered)="pageRendered($event)" (text-layer-rendered)="textLayerRendered($event)" (error)="onError($event)" (on-progress)="onProgress($event)">
+        </pdf-viewer>
+    </div>
+
+</div>
